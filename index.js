@@ -5,7 +5,7 @@ require("dotenv").config();
 
 client.on("message", async (msg) => {
     if (
-        msg.guild.id !== "380289224043266048" || !client.config.responseAble.some(x => msg.author.id === x)
+        msg.guild.id !== "UR_GUILD_ID" || !client.config.responseAble.some(x => msg.author.id === x)
     ) return;
 
     if (msg.content.startsWith("eval")) {
@@ -43,19 +43,6 @@ client.on("message", async (msg) => {
             }
         }
     }
-    if (client.eventCollect) {
-        if (msg.author.id === client.config.responseAble[0] && msg.content.includes("Type" | "typing")) {
-            const message = msg.content.match(/`.+`/gi);
-            if (!message) return
-            msg.channel.startTyping()
-            client.util.delay(6e3)
-            for (let i = 0; i < 5; i++) {
-                client.util.delay(5e3)
-                msg.channel.send(message[0].replace(/\`/gi, ''));
-            }
-            msg.channel.stopTyping(true);
-        }
-    }
     if (msg.content === "fish") {
         msg.channel.startTyping()
         client.util.delay(1e3);
@@ -91,10 +78,7 @@ client.on("message", async (msg) => {
             if (!message) return
             msg.channel.startTyping()
             client.util.delay(8e3)
-            for (let i = 0; i < 5; i++) {
-                client.util.delay(7e3)
-                msg.channel.send(message[0].replace(/\`/gi, ''));
-            }
+            msg.channel.send(message[0].replace(/\`/gi, ''));
             msg.channel.stopTyping(true);
         }
     } else if (msg.author.id === client.config.responseAble[0] && msg.content.includes("You don't have a fishing pole")) {

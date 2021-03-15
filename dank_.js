@@ -14,7 +14,6 @@ module.exports = class dank_ extends Client {
 
         this.config = config;
         this.util = util;
-        this.eventCollect = false;
     }
 
     event() {
