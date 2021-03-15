@@ -19,7 +19,7 @@ module.exports = class dank_ extends Client {
 
     event() {
         this.on("ready", () => {
-            const msg = this.channels.cache.get("820564645848809476");
+            const msg = this.channels.cache.get(this.config.channel);
             setInterval(() => {
                 msg.startTyping();
                 this.util.delay(1e3);
