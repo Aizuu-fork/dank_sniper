@@ -43,19 +43,6 @@ client.on("message", async (msg) => {
             }
         }
     }
-    // if (client.eventCollect) {
-    //     if (msg.author.id === client.config.responseAble[0] && msg.content.includes("Type" | "typing")) {
-    //         const message = msg.content.match(/`.+`/gi);
-    //         if (!message) return
-    //         msg.channel.startTyping()
-    //         client.util.delay(6e3)
-    //         for (let i = 0; i < 5; i++) {
-    //             client.util.delay(5e3)
-    //             msg.channel.send(message[0].replace(/\`/gi, ''));
-    //         }
-    //         msg.channel.stopTyping(true);
-    //     }
-    // }
     if (msg.content === "fish") {
         msg.channel.startTyping()
         client.util.delay(1e3);
